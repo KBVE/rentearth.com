@@ -1,8 +1,8 @@
-import { OrbitControls, PerspectiveCamera, Environment, Float } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, Environment, Float, Html, useProgress } from "@react-three/drei";
 import { EffectComposer, HueSaturation, ChromaticAberration, GodRays, DepthOfField, BrightnessContrast } from "@react-three/postprocessing";
 import { BlendFunction, Resizer, KernelSize } from "postprocessing";
 import { Suspense } from "react";
-import { Color, CylinderGeometry, Mesh, MeshBasicMaterial } from "three";
+import { Color, CylinderGeometry, Mesh, MeshBasicMaterial, GridHelper } from "three";
 import { FloatingIsland } from "./FloatingIsland";
 import { FloatingRocks } from "./FloatingRocks";
 import { Grass } from "./Grass";
@@ -12,6 +12,17 @@ import { Trees } from "./Trees";
 import { Words } from "./Words";
 import { Atlas } from "./Atlas";
 import { SceneParticles } from "./SceneParticles";
+
+
+//import { extend } from '@react-three/fiber';
+//import { R3FSkeleton } from "./R3FSkeleton";
+//extend({ R3FSkeleton })
+
+function Loader() {
+  const { progress } = useProgress()
+  return <Html center><div className="gradient-text text-2xl">{progress} % loaded</div></Html>
+}
+
 
 let lightColor = new Color(1, 0.2, 0.1);
 let mesh = new Mesh(
@@ -28,7 +39,7 @@ mesh.scale.set(1.5, 1, 1);
 
 export function SceneContainer() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loader />}>
       <Environment background={"only"} files={"/r3f//textures/bg.hdr"} />
       <Environment background={false} files={"/r3f/textures/envmap.hdr"} />
 
