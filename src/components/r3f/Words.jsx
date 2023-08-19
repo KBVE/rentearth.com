@@ -36,7 +36,7 @@ export function Words() {
       </Float>
 
 
-      <Float position={[4.75, 7, 0]} rotation={[0, -0.35, -0.05]} rotationIntensity={0.35} floatIntensity={0.5}>
+      <Float position={[-2, 6, 5]} rotation={[0, -0.35, -0.05]} rotationIntensity={0.35} floatIntensity={0.5}>
         <Text3D
           font={"/r3f/fonts/Roboto_Regular.json"}
           size={0.575}

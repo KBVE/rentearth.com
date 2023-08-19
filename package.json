@@ -27,6 +27,7 @@
     "appwrite": "^11.0.1",
     "astro": "^2.10.11",
     "flowbite": "^1.8.1",
+    "flowbite-react": "^0.5.0",
     "nanostores": "^0.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
