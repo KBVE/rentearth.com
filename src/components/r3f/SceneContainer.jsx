@@ -10,6 +10,7 @@ import { Portal } from "./Portal";
 import { Rocks } from "./Rocks";
 import { Trees } from "./Trees";
 import { Words } from "./Words";
+import { Atlas } from "./Atlas";
 import { SceneParticles } from "./SceneParticles";
 
 let lightColor = new Color(1, 0.2, 0.1);
@@ -59,6 +60,7 @@ export function SceneContainer() {
         <Grass />
         <SceneParticles />
         <Words />
+        <Atlas />
       </Float>
 
       <FloatingRocks />
