@@ -1,1 +1,295 @@
 <!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth" data-theme="dark">
+	<head>
+		<script>
+	const themeSaved = localStorage.getItem('theme');
+
+	if (themeSaved) {
+		document.documentElement.dataset.theme = themeSaved;
+		//      document.documentElement.classList.add(themeSaved);
+	} else {
+		document.documentElement.dataset.theme = 'dark';
+		//      document.documentElement.classList.add("dark");
+	}
+
+	window
+		.matchMedia('(prefers-color-scheme: dark)')
+		.addEventListener('change', (event) => {
+			if (!localStorage.getItem('theme')) {
+				document.documentElement.dataset.theme = event.matches
+					? 'dark'
+					: 'light';
+			}
+		});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://rentearth.com/account/login/">
+
+<title>RentEarth.com</title>
+<meta name="description" content="Rent Earth - Atlas Intelligence">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" media="print" onload="this.media='all'">
+<noscript>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap">
+</noscript>
+<meta property="og:title" content="RentEarth.com">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Rent Earth - Atlas Intelligence">
+<meta property="og:image" content="/assets/img/social.png">
+<meta property="og:url" content="https://rentearth.com/account/login/">
+<meta name="twitter:card" content="summary_large_image">
+		
+	<link rel="stylesheet" href="/_astro/404.d3338ce7.css" /><script type="module" src="/_astro/page.82f7f9d1.js"></script>
+<script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.7.6 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(f,1e4),e.addEventListener("pt0",w),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.7.6":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function f(n,r){for(w(),i==t&&(o.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<s.length;n++)(r=e.createElement("script")).innerHTML=s[n].innerHTML,e.head.appendChild(r);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+	<body class="text-base bg-zinc-950 text-default selection:bg-secondary selection:text-white">
+        <nav class="bg-zinc-900 px-4 py-2.5 fixed left-0 right-0 top-0 z-30">
+  <div class="flex flex-row-reverse">
+    <!-- Earth -->
+    <div class="">
+      <button class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none" type="button" data-modal-target="earthModal" data-modal-toggle="earthModal">
+        <svg height="32" width="32" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+            <style type="text/css">
+              .st0 {
+                fill: #000000;
+              }
+            </style>
+            <g>
+              <path class="st0" d="M496.123,167.12c-4.457-12.064-9.825-23.73-15.992-34.864c-11.674-21.088-26.21-40.373-43.13-57.261 c-0.413-0.413-0.754-0.762-1.167-1.175h-0.028c-0.48-0.476-0.937-0.936-1.445-1.404l-0.035-0.024 c-1.449-1.445-2.948-2.881-4.457-4.223C384.25,25.859,323.069,0.002,255.998,0.002c-38.948,0-75.912,8.722-108.972,24.302 c-2.27,1.071-4.532,2.174-6.754,3.31c-24.25,12.309-46.277,28.356-65.281,47.381c-27.793,27.761-49.214,61.951-61.924,100.11 c-0.639,1.921-1.27,3.873-1.861,5.817l-0.076,0.215c-0.405,1.317-0.793,2.682-1.174,4.032c-0.944,3.23-1.806,6.46-2.592,9.754 c-0.31,1.135-0.563,2.278-0.818,3.437C2.262,216.882,0,236.183,0,256c0,70.627,28.682,134.73,74.991,181.007 c26.06,26.048,57.75,46.531,93.075,59.483c1.099,0.405,2.222,0.81,3.36,1.182c6.75,2.381,13.655,4.468,20.659,6.27 c1.222,0.31,2.468,0.619,3.718,0.889c19.314,4.69,39.488,7.166,60.194,7.166c70.634,0,134.725-28.674,181.003-74.991 c8.492-8.468,16.36-17.524,23.559-27.127C492.834,367.055,512,313.706,512,256C512,224.771,506.385,194.818,496.123,167.12z M94.789,417.221C53.512,375.897,28.015,319,28.015,256c0-11.643,0.87-23.056,2.552-34.206 c7.766,5.429,21.932,13.024,22.111,13.064c0.531,0.167,1.142,0.254,1.881,0.254c1.147,0,2.524-0.206,3.948-0.436 c1.504-0.222,3.036-0.444,4.254-0.444c0.381,0,0.742,0.016,1.028,0.071c0.527,0.238,1.393,2.238,1.849,3.31 c0.945,2.159,1.913,4.396,3.905,5.373c1.849,0.936,5.849,1.421,11.71,2.047c1.941,0.215,3.925,0.453,4.944,0.619 c0.381,0.698,0.845,2.405,1.151,3.596c0.893,3.349,1.778,6.77,4.329,8.294c2.116,1.294,9.016,7.857,12.866,11.722 c0.508,0.492,1.146,0.746,1.809,0.746c0.425,0,0.889-0.103,1.27-0.357c0.306-0.175,7.027-4.111,9.373-5.579 c0.488,0.158,1.353,0.706,2.139,1.381c0.123,3.69,0.591,15.897,0.614,18.365c-0.432,1.532-5.555,6.856-11.206,11.634 c-0.559,0.468-0.9,1.127-0.92,1.833c-0.024,0.698-0.636,16.817,0,23.294c0.666,6.563,11.436,19.389,14.333,22.722 c1.226,3.326,4.567,12.175,5.842,14.072c1.273,1.912,14.19,11.603,22.495,17.738v38.19c0,4.278,1.671,7.071,3.004,9.341 c0.818,1.349,1.452,2.413,1.452,3.381v26.746c0,3.477,1.012,6.326,2.416,8.738C133.911,450.3,112.868,435.269,94.789,417.221z M453.413,161.755c-4.464-3.174-11.465-4.452-11.465-4.452l-5.099-0.651c-2.544-5.088-1.27-16.547-10.182-14.008 c-8.921,2.555-38.214,7.642-44.583,8.92c-6.361,1.27-14.008,11.452-19.099,19.096c-5.099,7.642-19.106,31.848-21.654,35.666 c-2.544,3.817-3.822,28.024-3.822,34.381c0,6.381,28.028,33.127,36.936,34.396c8.917,1.27,33.11-5.095,39.484-6.365 c6.369-1.286,10.186,7.635,15.282,7.635c5.095,0,11.464,2.547,6.368,10.206c-5.095,7.619-5.095,11.444,0,16.54 c5.096,5.103,15.282,24.206,8.913,39.492c-6.369,15.277-1.265,22.912,2.552,29.285c0.73,1.222,1.5,2.92,2.318,4.92 c-9.178,14.635-19.976,28.19-32.151,40.404c-41.321,41.262-98.218,66.762-161.213,66.762c-21.044,0-41.389-2.866-60.726-8.167 c0.08-0.318,0.155-0.674,0.21-1.04c0.321-2.388-0.666-4.166-1.686-5.42c1.429-0.683,2.572-1.778,3.385-3.239 c1.23-2.238,1.432-4.984,1.23-7.151l1.238,0.024c3.107,0,6.679-0.286,9.428-2.246c4.504-3.206,4.588-9.984,3.742-14.69 c0.329,0.143,0.666,0.301,0.972,0.396c0.35,0.143,0.735,0.175,1.123,0.175c4.076,0,8.584-7.326,9.798-12.175 c0.464-1.778,2.167-5.714,3.83-9.548c3.893-9.04,6.234-14.722,5.782-17.547c0.067-1.778,7.052-7.342,13.261-8.588 c7.366-1.468,9.988-4.174,12.766-13.23c2.651-8.595,3.953-22.912,3.266-29.032c-0.202-2.007,4.142-8.119,7.055-12.166 c4.735-6.682,7.619-10.952,7.619-14.286c0-7.698-6.475-12.889-11.341-16.134c-4.837-3.23-13.321-3.976-18.952-4.445 c-1.575-0.135-2.953-0.254-3.592-0.388c-0.583-0.12-1.603-1.23-2.417-2.088c-1.754-1.889-4.158-4.46-7.98-4.944 c-0.432-0.056-0.885-0.072-1.317-0.072c-2.428,0-4.584,0.762-6.698,1.5c-1.885,0.683-3.671,1.334-5.448,1.334 c-0.544,0-1.048-0.063-1.556-0.191c-0.944-0.198-1.306-0.46-1.378-0.46c0.02-0.428,0.838-1.865,2.845-3.199 c1.941-1.293,3.778-4.15,1.663-10.627c-1.503-4.666-4.285-9.079-5.396-10.73c-4-6.007-11.29-6.007-13.683-6.007 c-2.191,0-4.333,0.214-6.528,0.404l-0.476,0.016c-2.219,0-3.516-1.952-6.04-6.079c-1.429-2.342-3.035-4.961-5.266-7.659 c-4.849-5.81-11.618-6.58-17.631-6.58c-0.794,0-1.556,0-2.298,0.032c-0.634,0-1.25,0.016-1.829,0.016 c-0.814,0-1.556-0.016-2.198-0.103c-2.21-0.278-5.5-1.96-8.401-3.452c-3.182-1.635-6.19-3.191-8.738-3.548l-0.635-0.047 c-3.643,0-7.766,4.23-13.651,10.643c-1.46,1.587-3.341,3.642-4.337,4.507c-0.198-0.23-0.457-0.523-0.655-0.778 c-1.071-1.365-2.527-3.158-5.103-4.031c-0.556-0.183-1.119-0.286-1.678-0.286c-2.012,0-3.512,1.159-4.818,2.158 c-1.163,0.873-2.159,1.612-3.362,1.612c-0.706,0-1.524-0.246-2.468-0.754c-3.512-1.92-2.346-9.278-1.425-15.183 c0.436-2.714,0.845-5.27,0.845-7.421c0-4.888-2.889-5.42-4.103-5.42c-1.174,0-2.321,0.406-3.646,0.929 c-1.5,0.54-3.235,1.182-5.044,1.182c-0.814,0-1.576-0.135-2.314-0.388c-1.452-0.476-2.095-0.984-2.194-1.286 c-0.357-0.977,1.528-3.85,2.9-5.968c0.636-0.969,1.302-1.985,1.937-3.024c2.655-4.42,4.032-7.682,2.623-10.151 c-0.87-1.492-2.465-2.27-4.762-2.27c-0.885,0-1.88,0.103-3.055,0.333c-0.866,0.158-1.683,0.238-2.497,0.238 c-1.094,0-1.936-0.151-2.674-0.278c-0.69-0.11-1.222-0.214-1.686-0.214c-3.512,0-3.944,3.491-4.127,5c-0.655,5.301-3.838,8-9.417,8 c-0.413,0-0.809-0.024-1.246-0.048c-5.937-0.381-8.464-4.595-8.464-14.016c0-4.095,0.643-5.174,2.548-8.388 c0.944-1.548,2.118-3.508,3.543-6.381c3.155-6.294,5.655-7.468,8.837-8.936c0.94-0.445,1.912-0.896,2.909-1.469 c0.762-0.46,1.397-0.658,1.853-0.658c0.337,0,0.687,0.135,1.302,0.341c0.845,0.317,1.984,0.722,3.492,0.722 c0.432,0,0.888-0.015,1.396-0.087c4.687-0.801,5.679-3.548,6.548-5.968c0.108-0.254,0.202-0.524,0.338-0.865 c0.25,0.087,0.504,0.15,0.762,0.198c2.064,0.595,5.504,1.556,11.055,1.556c1.833,0,3.159,0.023,4.127,0.08 c-0.69,3.492-0.666,10.222,6.234,18.087c2.27,2.571,4.262,3.769,6.294,3.769c6.528,0,7.08-11,7.08-23.238 c0-7.396,2.805-9.42,11.107-15.349l0.54-0.397c4.508-3.198,7.187-7,9.778-10.674c2.806-3.96,5.448-7.707,10.42-10.802 c4.666-2.944,11.948-6.175,18.98-9.334c8.123-3.611,15.786-7.031,19.385-9.904c4.127-3.317,3.309-8.508,2.643-12.722 c-0.866-5.414-0.611-6.532,1.556-7.176c3.568-1.008,7.389-1.602,11.44-2.238c5.802-0.913,11.818-1.857,17.988-4.182 c6.405-2.388,7.889-5.809,8.016-8.278c0.234-4.174-3.366-7.516-6.516-9.095c-1.378-0.691-1.536-4.072-1.635-7.072 c-0.151-3.833-0.301-7.777-2.778-10.222c-1.397-1.428-3.186-2.143-5.25-2.143c-2.698,0-5.6,1.19-8.961,2.611 c-2.222,0.912-4.714,1.928-7.364,2.69c-0.286,0.08-0.536,0.135-0.738,0.135c-0.996,0-1.707-2.071-2.592-4.976 c-1.361-4.294-3.369-10.722-10.424-10.722c-0.79,0-1.659,0.072-2.572,0.254c-8.992,1.801-11.107,11.444-12.631,18.491 c-0.54,2.532-1.377,6.373-2.119,6.881c-5.298,0-7.004,3.381-8.662,6.666c-1.048,2.096-2.238,4.461-4.56,6.778 c-1.425,1.429-2.413,1.818-2.698,1.85c-0.432-0.405-1.092-3.508,1.682-9.048c1.174-2.325,2.496-5.714,0.866-8.484 c-1.913-3.238-6.44-3.452-11.667-3.642c-2.087-0.103-4.254-0.183-6.42-0.46c-4.131-0.516-5.218-1.564-5.27-1.786 c0-0.103,0.052-0.818,1.175-2.198c34.055-20.246,73.836-31.888,116.38-31.888c51.586,0,99.082,17.103,137.292,45.968 c-0.595,2.389-2.527,5.865-4.202,8.794c-2.543,4.468-1.269,7.016-1.269,7.016s12.103-1.913,14.643-3.182 c0.896-0.444,1.706-1.762,2.302-3.357c1.297,1.095,2.567,2.198,3.809,3.357c-3.028,2.745-6.281,5.626-7.381,6.372 c-1.905,1.262-8.274,3.182-10.825,4.444c-2.548,1.278,7.638,5.739,7.638,7.643c0,1.913,0,10.826-3.821,11.452 c-3.817,0.643-21.643,0.643-21.643,0.643s-5.738,20.374-4.464,22.286c1.274,1.92,9.552,6.381,14.65,5.746 c5.092-0.658,16.559-6.365,16.559-6.365l5.088-11.46l10.186-10.85c0,0,7.643,3.182,10.194,0.643 c2.544-2.54,7.642-5.079,7.642-5.079s5.096,9.539,8.278,10.818l0.615,0.278l0.016,0.039c3.679,5.064,7.115,10.278,10.318,15.659 l0.032,0.04v0.024l0.047,0.112c0.175,0.373,0.358,0.706,0.588,0.921c5.218,8.841,9.885,18.031,13.904,27.547 C462.088,167.255,457.274,164.501,453.413,161.755z"></path>
+            </g>
+          </g></svg>
+      </button>
+    </div>
+
+    <!-- Task -->
+    <div class="">
+      <button class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none" type="button" data-drawer-target="drawer-disable-body-scrolling" data-drawer-show="drawer-disable-body-scrolling" data-drawer-body-scrolling="false" aria-controls="drawer-disable-body-scrolling">
+      
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+            <path d="M9 9H15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M12 15L12 9" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M6 4C6 5.10457 5.10457 6 4 6C2.89543 6 2 5.10457 2 4C2 2.89543 2.89543 2 4 2C5.10457 2 6 2.89543 6 4Z" stroke="#1C274C" stroke-width="1.5"></path>
+            <path d="M6 20C6 21.1046 5.10457 22 4 22C2.89543 22 2 21.1046 2 20C2 18.8954 2.89543 18 4 18C5.10457 18 6 18.8954 6 20Z" stroke="#1C274C" stroke-width="1.5"></path>
+            <path d="M22 4C22 5.10457 21.1046 6 20 6C18.8954 6 18 5.10457 18 4C18 2.89543 18.8954 2 20 2C21.1046 2 22 2.89543 22 4Z" stroke="#1C274C" stroke-width="1.5"></path>
+            <path d="M22 20C22 21.1046 21.1046 22 20 22C18.8954 22 18 21.1046 18 20C18 18.8954 18.8954 18 20 18C21.1046 18 22 18.8954 22 20Z" stroke="#1C274C" stroke-width="1.5"></path>
+            <path d="M6 20H18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M18 4H6" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M20 18L20 6" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M4 6L4 18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+          </g></svg>
+      </button>
+    </div>
+
+    <!-- Notification Button -->
+    <div class="">
+      <button class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 rotate-90 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none" type="button" data-modal-target="notificationModal" data-modal-toggle="notificationModal">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+            <path d="M9.9997 10.0815H13.9997L9.9997 15.0815H13.9997M18.9997 20.5815L16.4072 18.02M4.9997 20.5815L7.5922 18.02M6.74234 3.99735C6.36727 3.62228 5.85856 3.41156 5.32812 3.41156C4.79769 3.41156 4.28898 3.62228 3.91391 3.99735C3.53884 4.37242 3.32813 4.88113 3.32812 5.41156C3.32812 5.942 3.53884 6.4507 3.91391 6.82578M20.0858 6.82413C20.4609 6.44905 20.6716 5.94035 20.6716 5.40991C20.6716 4.87948 20.4609 4.37077 20.0858 3.9957C19.7107 3.62063 19.202 3.40991 18.6716 3.40991C18.1411 3.40991 17.6324 3.62063 17.2574 3.9957M18.9997 12.5815C18.9997 16.4475 15.8657 19.5815 11.9997 19.5815C8.1337 19.5815 4.9997 16.4475 4.9997 12.5815C4.9997 8.71549 8.1337 5.58149 11.9997 5.58149C15.8657 5.58149 18.9997 8.71549 18.9997 12.5815Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </g></svg>
+      </button>
+    </div>
+
+    <div class="">
+      <button class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none" type="button" data-drawer-target="drawer-disable-body-scrolling" data-drawer-show="drawer-disable-body-scrolling" data-drawer-body-scrolling="false" aria-controls="drawer-disable-body-scrolling">
+        <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+            <rect x="3" y="17" width="18" height="2" rx="1" ry="1"></rect>
+            <rect x="3" y="11" width="18" height="2" rx="1" ry="1"></rect>
+            <rect x="3" y="5" width="18" height="2" rx="1" ry="1"></rect>
+          </g></svg>
+      </button>
+    </div>
+
+    <div class="">
+      <button class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none" type="button" data-drawer-target="drawer-disable-body-scrolling" data-drawer-show="drawer-disable-body-scrolling" data-drawer-body-scrolling="false" aria-controls="drawer-disable-body-scrolling">
+        <svg viewBox="0 0 48 48" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="32" height="32"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #000000;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+              </style></defs><path class="cls-1" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="cls-1" d="M15,37.4V10.5h9a9,9,0,0,1,0,18.07H15"></path><line class="cls-1" x1="24" y1="28.57" x2="32.91" y2="37.5"></line></g></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Drawer Menu -> Flowbite -->
+<div id="drawer-disable-body-scrolling" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-zinc-800/[.54] w-64" tabindex="-1" aria-labelledby="drawer-disable-body-scrolling-label">
+  <h5 id="drawer-disable-body-scrolling-label" class="text-base font-semibold text-cyan-200 uppercase">
+    Rent Earth
+  </h5>
+  <button type="button" data-drawer-hide="drawer-disable-body-scrolling" aria-controls="drawer-disable-body-scrolling" class="text-gray-400 bg-transparent hover:bg-cyan-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center">
+    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+    </svg>
+    <span class="sr-only">Close menu</span>
+  </button>
+  <div class="py-4 overflow-y-auto">
+    <ul class="space-y-2 font-medium">
+      <li>
+        <a href="#" class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
+          <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+            <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"></path>
+            <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"></path>
+          </svg>
+          <span class="ml-3">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <button type="button" class="flex items-center w-full p-2 text-base text-cyan-200 transition duration-75 rounded-lg group hover:bg-cyan-700 hover:text-white" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+          <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"></path>
+          </svg>
+          <span class="flex-1 ml-3 text-left whitespace-nowrap">E-commerce</span>
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path>
+          </svg>
+        </button>
+        <ul id="dropdown-example" class="hidden py-2 space-y-2">
+          <li>
+            <a href="#" class="flex items-center w-full p-2 text-cyan-200 transition duration-75 rounded-lg pl-11 group hover:bg-cyan-700 hover:text-white">Products</a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center w-full p-2 text-cyan-200 transition duration-75 rounded-lg pl-11 group hover:bg-cyan-700 hover:text-white">Billing</a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center w-full p-2 text-cyan-200 transition duration-75 rounded-lg pl-11 group hover:bg-cyan-700 hover:text-white">Invoice</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
+          <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+            <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"></path>
+          </svg>
+          <span class="flex-1 ml-3 whitespace-nowrap">Kanban</span>
+          <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full">Pro</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
+          <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"></path>
+          </svg>
+          <span class="flex-1 ml-3 whitespace-nowrap">Inbox Bolier</span>
+          <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full">3</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
+          <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+            <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"></path>
+          </svg>
+          <span class="flex-1 ml-3 whitespace-nowrap">Users Plate</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
+          <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+            <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"></path>
+          </svg>
+          <span class="flex-1 ml-3 whitespace-nowrap">Products</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
+          <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"></path>
+          </svg>
+          <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
+          <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z"></path>
+            <path d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z"></path>
+            <path d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z"></path>
+          </svg>
+          <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Earth Modal -> Flowbite -->
+
+<div id="earthModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-2xl max-h-full">
+    <!-- Modal content -->
+    <div class="relative bg-slate-950/[.54] rounded-lg shadow">
+      <!-- Modal header -->
+      <div class="flex items-start justify-between p-4 border-b rounded-t">
+        <h2 class="font-semibold gradient-text text-8xl">
+          Earth
+        </h2>
+        <button type="button" class="text-gray-400 bg-transparent hover:bg-cyan-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center" data-modal-hide="earthModal">
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div class="p-6 space-y-6">
+        <p class="text-base leading-relaxed">
+          Donde da Earth?
+        </p>
+      </div>
+      <!-- Modal footer -->
+      <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b">
+        
+   <button data-modal-hide="earthModal" type="button" class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">I accept</button>
+   <button data-modal-hide="earthModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Decline</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="notificationModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-2xl max-h-full">
+    <!-- Modal content -->
+    <div class="relative bg-slate-950/[.54] rounded-lg shadow">
+      <!-- Modal header -->
+      <div class="flex items-start justify-between p-4 border-b rounded-t">
+        <h2 class="font-semibold gradient-text text-8xl">
+          Notifications
+        </h2>
+        <button type="button" class="text-gray-400 bg-transparent hover:bg-cyan-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center" data-modal-hide="notificationModal">
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div class="p-6 space-y-6">
+        <p class="text-base leading-relaxed">
+          No Notifications
+        </p>
+      </div>
+      <!-- Modal footer -->
+      <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b">
+        
+   <button data-modal-hide="notificationModal" type="button" class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">I accept</button>
+   <button data-modal-hide="notificationModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Decline</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+		
+    <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();;(()=>{var d;{let p={0:t=>u(t),1:t=>l(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(l(t)),5:t=>new Set(l(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t)},h=t=>{let[e,n]=t;return e in p?p[e](n):void 0},l=t=>t.map(h),u=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([e,n])=>[e,h(n)]));customElements.get("astro-island")||customElements.define("astro-island",(d=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=async()=>{var i;if(!this.hydrator||!this.isConnected)return;let e=(i=this.parentElement)==null?void 0:i.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),o={},a=this.querySelectorAll("template[data-astro-template]");for(let r of a){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(o[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of n){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(o[r.getAttribute("name")||"default"]=r.innerHTML)}let c;try{c=this.hasAttribute("props")?u(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",y=this.getAttribute("component-export");throw y&&(s+=` (export ${y})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}await this.hydrator(this)(this.Component,c,o,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((e,n)=>{n.disconnect(),setTimeout(()=>this.childrenConnectedCallback(),0)}).observe(this,{childList:!0})}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}Astro[n](async()=>{let o=this.getAttribute("renderer-url"),[a,{default:c}]=await Promise.all([import(this.getAttribute("component-url")),o?import(o):()=>()=>{}]),i=this.getAttribute("component-export")||"default";if(!i.includes("."))this.Component=a[i];else{this.Component=a;for(let r of i.split("."))this.Component=this.Component[r]}return this.hydrator=c,this.hydrate},e,this)}attributeChangedCallback(){this.hydrate()}},d.observedAttributes=["props"],d))}})();</script><astro-island uid="Z1vhPEC" component-url="/_astro/Login.8778a6ed.js" component-export="default" renderer-url="/_astro/client.cb726945.js" props="{}" ssr="" client="only" opts="{&quot;name&quot;:&quot;SvelteLogin&quot;,&quot;value&quot;:&quot;svelte&quot;}"></astro-island>
+
+	</body></html>
