@@ -5,14 +5,14 @@ export type kbveLocker = {
 	username: string,
     phone: string,
     last: string,
-	uuid: string;
-	avatar: string;
-	github: string;
-	instagram: string;
-	email: string;
-	emailVerification: string;
-	phoneVerification: string;
-	theme: "dark" | "light" | "auto";
+	uuid: string,
+	avatar: string,
+	github: string,
+	instagram: string,
+	email: string,
+	emailVerification: string,
+	phoneVerification: string,
+	theme: "dark" | "light" | "auto",
 };
 export const kbve_v01d: number = 0.99;
 export const kbve_v01d_api: string = Object.freeze('');
@@ -33,3 +33,10 @@ export const pocketbase_data_bank: string = '';
 export const pbd = pocketbase_data_bank;
 export const pocketbase_proxy: string = '';
 export const pbp = pocketbase_proxy;
+/* R3F -> Loader */
+export type r3fLocker = {
+	island: string,
+    rock: string,
+    portal: string,
+	portal_mask: string,
+};
