@@ -3,13 +3,10 @@ import '@s/index.css';
 import Header from '@l/Header.astro';
 import Nav from "@l/Nav.astro";
 const {
-	content,
-	title,
-	description,
+	title = 'RentEarth.com',
+	description = 'Rent Earth - Atlas Intelligence',
 	image = '/assets/img/social.png',
-	bg,
-	render = true,
-} = Astro.props; //  Import Astro.props
+} = Astro.props; 
 const url = new URL(Astro.url.pathname, Astro.site);
 ---
 
