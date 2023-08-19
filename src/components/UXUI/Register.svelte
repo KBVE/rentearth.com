@@ -33,6 +33,7 @@
 
 	const dispatch = createEventDispatcher();
 
+	export let redirect = false;
 	export let sitekey: string = kbve.hcaptcha_site_key ;
 	export let apihost: string = kbve.hcaptcha_api;
 	export let hl: string = '';
@@ -172,7 +173,7 @@
 				password, 
                 username
             );
-            location.assign('/account/login');
+			if(redirect) location.assign('/account/login');
        
 		} catch (error) {
 			if (error instanceof Error) {

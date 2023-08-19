@@ -148,17 +148,19 @@ export const account = async () => {
 };
 
 export const getUser = async () => {
-	task(async () => {
+	
 		ClientStorage.log(" Starting AppWrite -> Session -> UserData");
 		const userData = await account();
 		if (userData?.$id) {
+			console.log(userData);
 			ClientStorage.locker('email', String(userData?.email));
 			ClientStorage.locker('uuid', String(userData?.$id));
 			ClientStorage.locker('last', String(userData?.$updatedAt));
             ClientStorage.locker('emailVerification', String(userData?.emailVerification));
             ClientStorage.locker('phoneVerification', String(userData?.phoneVerification));
             ClientStorage.locker('phone', String(userData?.phone));
+			// Temp Fix
+			ClientStorage.locker('username', String(userData?.name));
 			
 		}
-	});
 }

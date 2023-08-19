@@ -39,7 +39,7 @@ mesh.scale.set(1.5, 1, 1);
 export function SceneContainer() {
   return (
     <Suspense fallback={<Loader />}>
-      <Environment background={"only"} files={"/r3f//textures/bg.hdr"} />
+      <Environment background={"only"} files={"/r3f/textures/bg.hdr"} />
       <Environment background={false} files={"/r3f/textures/envmap.hdr"} />
 
       
@@ -65,7 +65,6 @@ export function SceneContainer() {
           position={[1.19, 10.85, -4.45]}
           target-position={[0, 0, -1]}
         />
-
         <Portal />
         <FloatingIsland />
         <Trees />

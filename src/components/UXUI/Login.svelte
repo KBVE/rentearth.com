@@ -32,6 +32,7 @@
 
 	const dispatch = createEventDispatcher();
 
+	export let redirect = false;
 	export let sitekey: string = kbve.hcaptcha_site_key;
 	export let apihost: string = kbve.hcaptcha_api;
 	export let hl: string = '';
@@ -133,9 +134,18 @@
 	};
 
 	const handleProfile = async () => {
+
+		try {
 		await getUser();
+		}
+		catch (error)
+		{
+
+		}
+		finally{
         //await getProfile(false);
-		location.assign('/');
+		if(redirect) location.assign('/');
+		}
 	}
 
 	const handleLogin = async () => {

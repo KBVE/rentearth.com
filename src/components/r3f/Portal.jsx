@@ -1,18 +1,27 @@
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useEffect } from "react";
-import { Scene, WebGLRenderTarget, TextureLoader, EquirectangularReflectionMapping, 
-  AlwaysStencilFunc, ReplaceStencilOp, DoubleSide, LinearEncoding,
+import {
+  Scene,
+  WebGLRenderTarget,
+  TextureLoader,
+  EquirectangularReflectionMapping,
+  AlwaysStencilFunc,
+  ReplaceStencilOp,
+  DoubleSide,
+  LinearEncoding,
 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { FillQuad } from "./FillQuad";
-import { useTexture } from "@react-three/drei";
-import {useStore} from "@nanostores/react";
-import { rentEarth$ } from "@c/appwrite/storage";
+//import { useTexture } from "@react-three/drei";
+//import { useStore } from "@nanostores/react";
+//import { rentEarth$ } from "@c/appwrite/storage";
+//import { Button, Modal } from 'flowbite-react';
+
 
 const scene = new Scene();
 scene.background = new TextureLoader().load(
   // thanks to https://www.creativeshrimp.com/midjourney-text-to-images.html
-  "/r3f/textures/galaxy.jpg",
+  ["/r3f/textures/galaxy.jpg"],
   (texture) => {
     texture.encoding = LinearEncoding;
     texture.mapping = EquirectangularReflectionMapping;
@@ -25,25 +34,16 @@ const target = new WebGLRenderTarget(window.innerWidth, window.innerHeight, {
 
 window.addEventListener("resize", () => {
   target.setSize(window.innerWidth, window.innerHeight);
-  
 });
 
 export function Portal() {
   // thanks to https://sketchfab.com/3d-models/portal-frame-da34b37a224e4e49b307c0b17a50af2c
-  const model = useLoader(
-    GLTFLoader,
-    "/r3f/models/portal.glb"
-  );
-  const mask = useLoader(
-    GLTFLoader,
-    "/r3f/models/portal_mask.glb"
-  );
+  const model = useLoader(GLTFLoader, "/r3f/models/portal.glb");
+  const mask = useLoader(GLTFLoader, "/r3f/models/portal_mask.glb");
 
-    
   //const $rentEarth = useStore(rentEarth$);
-  
-  //const [ bgMap ] = useLoader(TextureLoader, [ $rentEarth.logo ]);
 
+  //const [ bgMap ] = useLoader(TextureLoader, [ $rentEarth.logo ]);
 
   useFrame((state) => {
     state.gl.setRenderTarget(target);
@@ -68,9 +68,11 @@ export function Portal() {
 
   return (
     <>
-      <primitive object={model.scene} />
-      <primitive object={mask.scene} />
-      <FillQuad map={target.texture} maskId={1} />
+      <mesh onClick={() => console.log(document.getElementById("#earthModal"))}>
+        <primitive object={model.scene} />
+        <primitive object={mask.scene} />
+        <FillQuad map={target.texture} maskId={1} />
+      </mesh>
     </>
   );
 }
