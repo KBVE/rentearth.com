@@ -21,7 +21,7 @@ export default defineConfig({
 		}),
 
 		//  React
-		react(),
+		react( {experimentalReactChildren: true}),
 		//  Post-Build -> Compress
 		//compress(),
 		//  Prefetch
