@@ -4,7 +4,6 @@ import { BlendFunction, Resizer, KernelSize } from "postprocessing";
 import { Suspense } from "react";
 import { Color, CylinderGeometry, Mesh, MeshBasicMaterial, GridHelper } from "three";
 import { FloatingIsland } from "./FloatingIsland";
-import { FloatingRocks } from "./FloatingRocks";
 import { Grass } from "./Grass";
 import { Portal } from "./Portal";
 import { Rocks } from "./Rocks";

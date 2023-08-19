@@ -5,6 +5,9 @@ import { Scene, WebGLRenderTarget, TextureLoader, EquirectangularReflectionMappi
 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { FillQuad } from "./FillQuad";
+import { useTexture } from "@react-three/drei";
+import {useStore} from "@nanostores/react";
+import { rentEarth$ } from "@c/appwrite/storage";
 
 const scene = new Scene();
 scene.background = new TextureLoader().load(
@@ -35,6 +38,12 @@ export function Portal() {
     GLTFLoader,
     "/r3f/models/portal_mask.glb"
   );
+
+    
+  //const $rentEarth = useStore(rentEarth$);
+  
+  //const [ bgMap ] = useLoader(TextureLoader, [ $rentEarth.logo ]);
+
 
   useFrame((state) => {
     state.gl.setRenderTarget(target);

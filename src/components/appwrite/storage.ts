@@ -20,6 +20,7 @@ export const log$: WritableAtom<string> = atom("");
 //?         [CACHE]
 
 export const kbve$ = persistentMap<kbve.kbveLocker>("kbve:");
+export const rentEarth$ = persistentMap<kbve.rentEarthMap>("rent:");
 
 //*         [FUNCTIONS]
 
@@ -48,6 +49,13 @@ export const locker = async (__key: keyof kbve.kbveLocker, __data: string) => {
 	task(async () => {
 		log(`Storing ${__data} into locker for ${__key}`);
 		kbve$.setKey(__key, __data);
+	});
+};
+
+export const rentEarth = async (__key: keyof kbve.rentEarthMap, __data: string) => {
+	task(async () => {
+		log(`Storing ${__data} into locker for ${__key}`);
+		rentEarth$.setKey(__key, __data);
 	});
 };
 
