@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth" data-theme="dark">
+	<head>
+		<script>
+	const themeSaved = localStorage.getItem('theme');
+
+	if (themeSaved) {
+		document.documentElement.dataset.theme = themeSaved;
+		//      document.documentElement.classList.add(themeSaved);
+	} else {
+		document.documentElement.dataset.theme = 'dark';
+		//      document.documentElement.classList.add("dark");
+	}
+
+	window
+		.matchMedia('(prefers-color-scheme: dark)')
+		.addEventListener('change', (event) => {
+			if (!localStorage.getItem('theme')) {
+				document.documentElement.dataset.theme = event.matches
+					? 'dark'
+					: 'light';
+			}
+		});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://rentearth.com/404/">
+
+<title>RentEarth.com</title>
+<meta name="description" content="Atlas Model">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" media="print" onload="this.media='all'">
+<noscript>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap">
+</noscript>
+<meta property="og:title" content="RentEarth.com">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Atlas Model">
+<meta property="og:image" content="/assets/img/social.png">
+<meta property="og:url" content="https://rentearth.com/404/">
+<meta name="twitter:card" content="summary_large_image">
+		
+	<link rel="stylesheet" href="/_astro/404.956cd577.css" />
+<link rel="stylesheet" href="/_astro/404.ec991be9.css" /><script type="module" src="/_astro/page.82f7f9d1.js"></script>
+<script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.7.6 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(f,1e4),e.addEventListener("pt0",w),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.7.6":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function f(n,r){for(w(),i==t&&(o.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<s.length;n++)(r=e.createElement("script")).innerHTML=s[n].innerHTML,e.head.appendChild(r);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+	<body class="text-base bg-zinc-950 text-default selection:bg-secondary selection:text-white">
+        <nav class="bg-zinc-900 px-4 py-2.5 fixed left-0 right-0 top-0 z-30">
+<div class="flex flex-row-reverse ">
+
+    
+    <div class="">
+      <button class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2  focus:outline-none" type="button" data-drawer-target="drawer-disable-body-scrolling" data-drawer-show="drawer-disable-body-scrolling" data-drawer-body-scrolling="false" aria-controls="drawer-disable-body-scrolling">
+      
+         <svg viewBox="0 0 48 48" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="32" height="32"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="cls-1" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="cls-1" d="M15,37.4V10.5h9a9,9,0,0,1,0,18.07H15"></path><line class="cls-1" x1="24" y1="28.57" x2="32.91" y2="37.5"></line></g></svg>
+
+      </button>
+    </div>
+
+    <div class="">
+    <button class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2  focus:outline-none" type="button" data-drawer-target="drawer-disable-body-scrolling" data-drawer-show="drawer-disable-body-scrolling" data-drawer-body-scrolling="false" aria-controls="drawer-disable-body-scrolling">
+      <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="3" y="17" width="18" height="2" rx="1" ry="1"></rect> <rect x="3" y="11" width="18" height="2" rx="1" ry="1"></rect> <rect x="3" y="5" width="18" height="2" rx="1" ry="1"></rect> </g></svg>
+   </button>
+    </div>
+
+    <div class="">
+      <button class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 rotate-90 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2  focus:outline-none" type="button" data-drawer-target="drawer-disable-body-scrolling" data-drawer-show="drawer-disable-body-scrolling" data-drawer-body-scrolling="false" aria-controls="drawer-disable-body-scrolling">
+        
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.9997 10.0815H13.9997L9.9997 15.0815H13.9997M18.9997 20.5815L16.4072 18.02M4.9997 20.5815L7.5922 18.02M6.74234 3.99735C6.36727 3.62228 5.85856 3.41156 5.32812 3.41156C4.79769 3.41156 4.28898 3.62228 3.91391 3.99735C3.53884 4.37242 3.32813 4.88113 3.32812 5.41156C3.32812 5.942 3.53884 6.4507 3.91391 6.82578M20.0858 6.82413C20.4609 6.44905 20.6716 5.94035 20.6716 5.40991C20.6716 4.87948 20.4609 4.37077 20.0858 3.9957C19.7107 3.62063 19.202 3.40991 18.6716 3.40991C18.1411 3.40991 17.6324 3.62063 17.2574 3.9957M18.9997 12.5815C18.9997 16.4475 15.8657 19.5815 11.9997 19.5815C8.1337 19.5815 4.9997 16.4475 4.9997 12.5815C4.9997 8.71549 8.1337 5.58149 11.9997 5.58149C15.8657 5.58149 18.9997 8.71549 18.9997 12.5815Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+   </button>
+</div>
+
+<div class="">
+   <button class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2  focus:outline-none" type="button" data-drawer-target="drawer-disable-body-scrolling" data-drawer-show="drawer-disable-body-scrolling" data-drawer-body-scrolling="false" aria-controls="drawer-disable-body-scrolling">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 9H15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M12 15L12 9" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M6 4C6 5.10457 5.10457 6 4 6C2.89543 6 2 5.10457 2 4C2 2.89543 2.89543 2 4 2C5.10457 2 6 2.89543 6 4Z" stroke="#1C274C" stroke-width="1.5"></path> <path d="M6 20C6 21.1046 5.10457 22 4 22C2.89543 22 2 21.1046 2 20C2 18.8954 2.89543 18 4 18C5.10457 18 6 18.8954 6 20Z" stroke="#1C274C" stroke-width="1.5"></path> <path d="M22 4C22 5.10457 21.1046 6 20 6C18.8954 6 18 5.10457 18 4C18 2.89543 18.8954 2 20 2C21.1046 2 22 2.89543 22 4Z" stroke="#1C274C" stroke-width="1.5"></path> <path d="M22 20C22 21.1046 21.1046 22 20 22C18.8954 22 18 21.1046 18 20C18 18.8954 18.8954 18 20 18C21.1046 18 22 18.8954 22 20Z" stroke="#1C274C" stroke-width="1.5"></path> <path d="M6 20H18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M18 4H6" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20 18L20 6" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4 6L4 18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+   </button>
+</div>
+
+ </div>
+
+ </nav>
+
+<!-- Flowbite -->
+<div id="drawer-disable-body-scrolling" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-zinc-800 w-64 " tabindex="-1" aria-labelledby="drawer-disable-body-scrolling-label">
+    <h5 id="drawer-disable-body-scrolling-label" class="text-base font-semibold text-cyan-200 uppercase ">Rent Earth</h5>
+    <button type="button" data-drawer-hide="drawer-disable-body-scrolling" aria-controls="drawer-disable-body-scrolling" class="text-gray-400 bg-transparent hover:bg-cyan-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center ">
+      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+      </svg>
+      <span class="sr-only">Close menu</span>
+   </button>
+  <div class="py-4 overflow-y-auto">
+      <ul class="space-y-2 font-medium">
+         <li>
+            <a href="#" class="flex items-center p-2 text-cyan-200 rounded-lg  hover:bg-cyan-700 hover:text-white group">
+               <svg class="w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                  <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"></path>
+                  <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"></path>
+               </svg>
+               <span class="ml-3">Dashboard</span>
+            </a>
+         </li>
+         <li>
+            <button type="button" class="flex items-center w-full p-2 text-base text-cyan-200 transition duration-75 rounded-lg group hover:bg-cyan-700 hover:text-white  " aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                  <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900  " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                     <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"></path>
+                  </svg>
+                  <span class="flex-1 ml-3 text-left whitespace-nowrap">E-commerce</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path>
+                  </svg>
+            </button>
+            <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                  <li>
+                     <a href="#" class="flex items-center w-full p-2 text-cyan-200  transition duration-75 rounded-lg pl-11 group hover:bg-cyan-700 hover:text-white ">Products</a>
+                  </li>
+                  <li>
+                     <a href="#" class="flex items-center w-full p-2 text-cyan-200  transition duration-75 rounded-lg pl-11 group hover:bg-cyan-700 hover:text-white">Billing</a>
+                  </li>
+                  <li>
+                     <a href="#" class="flex items-center w-full p-2 text-cyan-200 transition duration-75 rounded-lg pl-11 group hover:bg-cyan-700 hover:text-white ">Invoice</a>
+                  </li>
+            </ul>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-cyan-200  rounded-lg  hover:bg-cyan-700 hover:text-white  group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                  <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"></path>
+               </svg>
+               <span class="flex-1 ml-3 whitespace-nowrap">Kanban</span>
+               <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full ">Pro</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-cyan-200  rounded-lg  hover:bg-cyan-700 hover:text-white  group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"></path>
+               </svg>
+               <span class="flex-1 ml-3 whitespace-nowrap">Inbox Bolier</span>
+               <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full ">3</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-cyan-200  rounded-lg  hover:bg-cyan-700 hover:text-white  group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                  <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"></path>
+               </svg>
+               <span class="flex-1 ml-3 whitespace-nowrap">Users Plate</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-cyan-200  rounded-lg  hover:bg-cyan-700 hover:text-white  group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                  <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"></path>
+               </svg>
+               <span class="flex-1 ml-3 whitespace-nowrap">Products</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-cyan-200  rounded-lg  hover:bg-cyan-700 hover:text-white group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"></path>
+               </svg>
+               <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-cyan-200 rounded-lg  hover:bg-cyan-700 hover:text-white  group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z"></path>
+                  <path d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z"></path>
+                  <path d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z"></path>
+               </svg>
+               <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+            </a>
+         </li>
+      </ul>
+   </div>
+</div>
+		
+  <div class="flex flex-grow h-[500px] min-h-screen">
+    Not Found
+  </div>
+
+	</body></html>
