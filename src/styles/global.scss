@@ -1,0 +1,219 @@
+// Tokens
+:root {
+	// (c)olor
+	--c-black: #05091e;
+	--c-blue: #46b4ff;
+	--c-gray: #90aab7;
+	--c-green: #9ef2cb;
+	--c-pink: #ffb8d9;
+	--c-orange: #ffb7a3;
+	--c-yellow: #ffdace;
+	--c-white: #fff;
+  --c-primary: rgb(231, 175, 134);
+  --c-primary-t1: rgba(231, 175, 134, 0.1);
+  --c-primary-t2: rgba(231, 175, 134, 0.2);
+  --c-primary-t3: rgba(231, 175, 134, 0.3);
+  --c-primary-t4: rgba(231, 175, 134, 0.4);
+  --c-primary-t5: rgba(231, 175, 134, 0.5);
+  --c-primary-t6: rgba(231, 175, 134, 0.6);
+  --c-primary-t7: rgba(231, 175, 134, 0.7);
+  --c-primary-t8: rgba(231, 175, 134, 0.8);
+  --c-primary-t9: rgba(231, 175, 134, 0.9);
+  --c-primary-t95: rgba(231, 175, 134, 0.96);
+  --c-primary-t99: rgba(231, 175, 134, 0.99);
+  --c-bg-primary: rgb(22, 22, 20);
+  --c-bg-t1: rgba(22, 22, 20, 0.1);
+  --c-bg-t2: rgba(22, 22, 20, 0.2);
+  --c-bg-t3: rgba(22, 22, 20, 0.3);
+  --c-bg-t4: rgba(22, 22, 20, 0.4);
+  --c-bg-t5: rgba(22, 22, 20, 0.5);
+  --c-bg-t6: rgba(22, 22, 20, 0.6);
+  --c-bg-t7: rgba(22, 22, 20, 0.7);
+  --c-bg-t8: rgba(22, 22, 20, 0.8);
+  --c-bg-t9: rgba(22, 22, 20, 0.9);
+  --c-bg-t95: rgba(22, 22, 20, 0.95);
+  --c-bg-t99: rgba(22, 22, 20, 0.99);
+
+	// (f)ont
+	--f-u18: 11.390625em;
+	--f-u17: 9.950627481136905em;
+	--f-u16: 8.692673779389363em;
+	--f-u15: 7.59375em;
+	--f-u14: 6.63375165409127em;
+	--f-u13: 5.795115852926242em;
+	--f-u12: 5.0625em;
+	--f-u11: 4.422501102727513em;
+	--f-u10: 3.8634105686174953em;
+	--f-u9: 3.375em;
+	--f-u8: 2.9483340684850083em;
+	--f-u7: 2.575607045744997em;
+	--f-u6: 2.25em;
+	--f-u5: 1.9655560456566725em;
+	--f-u4: 1.7170713638299977em;
+	--f-u3: 1.5em;
+	--f-u2: 1.3103706971044482em;
+	--f-u1: 1.1447142425533319em;
+	--f-d1: 0.8735804647362989em;
+	--f-d2: 0.7631428283688879em;
+	--f-d3: 0.6666666666666666em;
+	--f-d4: 0.5823869764908659em;
+	--f-d5: 0.5087618855792586em;
+	--f-d6: 0.4444444444444444em;
+	--f-d7: 0.3882579843272439em;
+	--f-d8: 0.3391745903861724em;
+	--f-d9: 0.2962962962962963em;
+	--f-d10: 0.2588386562181626em;
+	--f-d11: 0.22611639359078162em;
+	--f-d12: 0.19753086419753085em;
+	--f-d13: 0.17255910414544176em;
+	--f-d14: 0.15074426239385438em;
+	--f-d15: 0.13168724279835392em;
+	--f-d16: 0.11503940276362785em;
+	--f-d17: 0.10049617492923625em;
+	--f-d18: 0.0877914951989026em;
+
+	// (t)heme
+	--t-fg: var(--c-primary);
+	--t-bg: var(--c-bg-primary);
+	--t-subdue: var(--c-gray);
+	--t-active: var(--c-blue);
+}
+
+// Base
+
+body {
+	margin: 0;
+	color: var(--t-fg);
+  background-color: var(--t-bg);
+	font-family: 'Inter', 'system-ui', sans-serif;
+}
+
+* {
+	box-sizing: content-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: var(--t-active);
+}
+
+h1 {
+	font-size: var(--f-u8);
+}
+// Hex E7AF86
+h3 {
+	color:rgb(231, 175, 134);
+}
+
+code {
+  color: var(--t-fg);
+  background-color: var(--t-bg);
+  border-radius: 4px;
+  padding: 2px;
+}
+
+// Utils
+
+// color
+$colors: 'black', 'blue', 'white';
+@each $color in $colors {
+	// text color
+	.tc-#{$color} {
+		color: var(--c-#{color});
+	}
+	// background color
+	.bg-#{$color} {
+		background-color: var(--c-#{color});
+	}
+}
+
+// font size
+@for $i from 0 through 18 {
+	.f-u#{$i} {
+		font-size: var(--f-u#{$i});
+	}
+	.f-d#{$i} {
+		font-size: var(--f-d#{$i});
+	}
+}
+
+// margin & padding
+@for $i from 0 through 36 {
+	.ma#{$i} {
+		margin: #{0.5 * $i}rem;
+	}
+	.mt#{$i} {
+		margin-top: #{0.5 * $i}rem;
+	}
+	.mr#{$i} {
+		margin-right: #{0.5 * $i}rem;
+	}
+	.mb#{$i} {
+		margin-bottom: #{0.5 * $i}rem;
+	}
+	.ml#{$i} {
+		margin-left: #{0.5 * $i}rem;
+	}
+	.pa#{$i} {
+		padding: #{0.5 * $i}rem;
+	}
+	.pt#{$i} {
+		padding-top: #{0.5 * $i}rem;
+	}
+	.pr#{$i} {
+		padding-right: #{0.5 * $i}rem;
+	}
+	.pb#{$i} {
+		padding-bottom: #{0.5 * $i}rem;
+	}
+	.pl#{$i} {
+		padding-left: #{0.5 * $i}rem;
+	}
+}
+
+// text align
+.tac {
+	text-align: center;
+}
+.tal {
+	text-align: left;
+}
+.tar {
+	text-align: right;
+}
+
+// wrapper
+
+.wrapper {
+	max-width: 80em;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
+  	background-color: var(--c-bg-primary);
+}
+.wrapper__readable {
+	max-width: 90em;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+.wrapper_overlay {
+	background-color: rgba(255, 255, 255, 0.12);
+	// backdrop-filter: blur(80px);
+	// -webkit-backdrop-filter: blur(80px);
+	padding: 16px;
+	border-radius: 16px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+	p {
+	text-align: center;
+	color:  rgb(231, 175, 134);
+	//box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+	}
+}
