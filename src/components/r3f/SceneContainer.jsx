@@ -1,10 +1,9 @@
-import { OrbitControls, PerspectiveCamera, Environment, Float, Html, useProgress } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, Environment, Float, Html, useProgress, Preload } from "@react-three/drei";
 import { EffectComposer, HueSaturation, ChromaticAberration, GodRays, DepthOfField, BrightnessContrast } from "@react-three/postprocessing";
 import { BlendFunction, Resizer, KernelSize } from "postprocessing";
 import { Suspense } from "react";
 import { Color, CylinderGeometry, Mesh, MeshBasicMaterial, GridHelper } from "three";
 import { FloatingIsland } from "./FloatingIsland";
-import { FloatingRocks } from "./FloatingRocks";
 import { Grass } from "./Grass";
 import { Portal } from "./Portal";
 import { Rocks } from "./Rocks";
@@ -43,6 +42,9 @@ export function SceneContainer() {
       <Environment background={"only"} files={"/r3f//textures/bg.hdr"} />
       <Environment background={false} files={"/r3f/textures/envmap.hdr"} />
 
+      
+
+
       <PerspectiveCamera makeDefault fov={50} position={[-1.75, 10.85, 20.35]} />
       <OrbitControls target={[1, 5, 0]} maxPolarAngle={Math.PI * 0.5}/>
 
@@ -74,7 +76,6 @@ export function SceneContainer() {
         <Atlas />
       </Float>
 
-      <FloatingRocks />
 
       <EffectComposer stencilBuffer={true}>
         <DepthOfField

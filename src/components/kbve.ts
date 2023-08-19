@@ -34,9 +34,10 @@ export const pbd = pocketbase_data_bank;
 export const pocketbase_proxy: string = '';
 export const pbp = pocketbase_proxy;
 /* R3F -> Loader */
-export type r3fLocker = {
+export type rentEarthMap = {
 	island: string,
     rock: string,
     portal: string,
 	portal_mask: string,
+	logo: string,
 };
