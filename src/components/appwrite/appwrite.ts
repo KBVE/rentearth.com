@@ -131,10 +131,9 @@ export const create = async (
 		await appwriteAccount.create(ID.unique(), email, password, name);
 		const session = await appwriteAccount.createEmailSession(email, password);
 		isLoggedIn.set(session);
-		window.location.href = "/account/profile";
 	} catch (error) {
 		const appwriteError = error as AppwriteException;
-		throw appwriteError.message;
+		throw appwriteError;
 	}
 };
 
