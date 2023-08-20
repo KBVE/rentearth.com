@@ -1,8 +1,10 @@
 ---
 import KBVE from "@l/KBVE.astro";
+import SvelteOnboard from "@c/UXUI/Onboard.svelte";
 ---
 <KBVE>
     <br />
     <br />
     <br />
+    <SvelteOnboard client:only="svelte" />
 </KBVE>

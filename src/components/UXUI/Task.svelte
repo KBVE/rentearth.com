@@ -118,7 +118,7 @@
 
 
 <WidgetWrapper background="https://kbve.com/assets/img/curved-images/wave.jpg">
-  <selection>
+  <selection id="task">
     <div class="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-offset">
       <div class="flex space-x-4">
         <img alt="" src="https://source.unsplash.com/100x100/?portrait" class="object-cover w-12 h-12 rounded-full shadow bg-gray-500">
@@ -134,7 +134,7 @@
         <img src="/img/loading-icegif.gif" alt="" class="object-cover w-full mb-4 h-60 sm:h-96 ">
         {/if}
         <h2 class="mb-1 text-xl font-semibold gradient-text">{data || '... Still Generating ...'}</h2>
-        <p class="text-sm ">{`Image based off of ${data}` || '... Still Generating ....'}</p>
+        <p class="text-sm ">{`Logo based off of ${data}` || '... Still Generating ....'}</p>
       </div>
       <div class="flex flex-wrap justify-between">
         <div class="space-x-2">
@@ -169,6 +169,7 @@
     </div>
   </selection>
 </WidgetWrapper>
+<br />
 
 {/if}
 
