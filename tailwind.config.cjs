@@ -71,7 +71,7 @@ module.exports = {
     require('flowbite/plugin'),
     //require("tailwindcss-fluid-type"),
     //require('@tailwindcss/forms'),
-    //require('@tailwindcss/typography'),
+    require('@tailwindcss/typography'),
     //require('@tailwindcss/aspect-ratio'),
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
