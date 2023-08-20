@@ -1,0 +1,15 @@
+---
+import KBVE from '@l/KBVE.astro';
+import SvelteLogo from "@c/UXUI/Logo.svelte";
+import SvelteProfile from "@c/UXUI/Profile.svelte";
+---
+<KBVE title="RentEarth Logo Generation">
+
+    <br />
+    <br />
+    <br />
+    <SvelteProfile client:only="svelte" />
+    <br />
+    <SvelteLogo client:only="svelte" />
+
+</KBVE>
