@@ -1,9 +1,13 @@
 ---
 import Modal from "@c/UXUI/Modal.astro";
+import SvelteNav from "@c/UXUI/Nav.svelte";
+import Profile from "@c/UXUI/Profile.svelte"
 ---
 
 <nav class="bg-zinc-900 px-4 py-2.5 fixed left-0 right-0 top-0 z-30">
+  
   <div class="flex flex-row-reverse">
+    
     <!-- Earth -->
     <div class="">
       <button
@@ -45,7 +49,7 @@ import Modal from "@c/UXUI/Modal.astro";
     <div class="">
       <a href="/account/task/">
       <button
-        class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 animate-pulse focus:outline-none"
+        class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none"
         type="button"
        >
         <svg
@@ -206,6 +210,9 @@ import Modal from "@c/UXUI/Modal.astro";
         </button>
       </a>
     </div>
+    <div class="mr-4">
+      <Profile client:only="svelte" />
+    </div>
   </div>
 </nav>
 
@@ -295,6 +302,13 @@ import Modal from "@c/UXUI/Modal.astro";
           </svg>
         </button>
         <ul id="dropdown-example" class="hidden py-2 space-y-2">
+          <li>
+            <a
+              href="/account/business/"
+              class="flex items-center w-full p-2 text-cyan-200 transition duration-75 rounded-lg pl-11 group hover:bg-cyan-700 hover:text-white"
+              >Create Business</a
+            >
+          </li>
           <li>
             <a
               href="/account/logo/"
@@ -396,7 +410,7 @@ import Modal from "@c/UXUI/Modal.astro";
           <span class="flex-1 ml-3 whitespace-nowrap">Products</span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a
           href="/account/login/"
           class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
@@ -439,12 +453,15 @@ import Modal from "@c/UXUI/Modal.astro";
           </svg>
           <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
-  <div>
+  <!--<div>
     Unity
-  </div>
+  </div>-->
+    <div>
+      <SvelteNav client:only="svelte" />
+    </div>
 </div>
 
 <!-- Earth Modal -> Flowbite -->

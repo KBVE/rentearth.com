@@ -8,6 +8,7 @@ import {
 	Storage,
 	ID,
 	Models,
+	Query,
 } from "appwrite";
 import { atom, WritableAtom, task } from "nanostores";
 
@@ -142,9 +143,25 @@ export const account = async () => {
 		return appwriteAccount.get();
 	} catch (error) {
 		const appwriteError = error as AppwriteException;
-		throw appwriteError.message;
+		throw appwriteError;
 	}
 };
+
+export const getProfile = async () => {
+	try {
+	ClientStorage.log(" Starting AppWrite -> Session -> ProfileData");
+	let __ProfileData = await appwriteDatabases.listDocuments(
+			"user",
+			"profile",
+			[Query.limit(1)]
+		);
+		ClientStorage.log(JSON.stringify(__ProfileData));
+		return JSON.stringify(__ProfileData);
+	} catch (error) {
+		const appwriteError = error as AppwriteException;
+		throw appwriteError;
+	}
+}
 
 export const getUser = async () => {
 	

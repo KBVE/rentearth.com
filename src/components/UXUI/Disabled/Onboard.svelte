@@ -7,7 +7,7 @@
 <script lang="ts">
   //Svelte
   import { onMount, onDestroy, createEventDispatcher } from "svelte";
-  import WidgetWrapper from "./WidgetWrapper.svelte";
+  import WidgetWrapper from "@c/UXUI/WidgetWrapper.svelte";
 
   import { kbve$, log, notification$, notification } from "@c/appwrite/storage";
   import {
@@ -198,8 +198,6 @@
   };
 
   // Handle Wish [END]
-
-
 
 
   

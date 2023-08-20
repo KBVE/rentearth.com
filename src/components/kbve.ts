@@ -12,6 +12,8 @@ export type kbveLocker = {
 	email: string,
 	emailVerification: string,
 	phoneVerification: string,
+	business: string,
+	logoURL: string,
 	theme: "dark" | "light" | "auto",
 };
 export const kbve_v01d: number = 0.99;
@@ -46,3 +48,11 @@ export type rentEarthMap = {
 	portal_mask: string,
 	logo: string,
 };
+
+export type BusinessResponse = {
+    business_name: string;
+    business_idea: string;
+    created_at: string;
+    created_by: string;
+    $id: string;
+  }
