@@ -1,0 +1,13 @@
+---
+import KBVE from "@l/KBVE.astro";
+import SvelteProfile from "@c/UXUI/Profile.svelte";
+import SvelteSettings from "@c/UXUI/Settings.svelte";
+---
+<KBVE>
+    <br />
+    <br />
+    <br />
+    <SvelteProfile client:only="svelte" />
+    <br />
+    <SvelteSettings client:only="svelte" />
+</KBVE>

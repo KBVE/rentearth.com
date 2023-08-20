@@ -1,0 +1,13 @@
+---
+import KBVE from "@l/KBVE.astro";
+import Task from "@c/UXUI/Task.svelte";
+import Profile from "@c/UXUI/Profile.svelte";
+---
+<KBVE>
+    <br />
+    <br />
+    <br />
+    <Profile client:only="svelte" />
+    <br />
+    <Task client:only="svelte" />
+</KBVE>

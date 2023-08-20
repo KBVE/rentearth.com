@@ -9,7 +9,8 @@ import Modal from "@c/UXUI/Modal.astro";
       <button
         class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none"
         type="button"
-        data-modal-target="earthModal" data-modal-toggle="earthModal">
+        data-modal-target="earthModal"
+        data-modal-toggle="earthModal">
         <svg
           height="32"
           width="32"
@@ -48,9 +49,7 @@ import Modal from "@c/UXUI/Modal.astro";
         data-drawer-target="drawer-disable-body-scrolling"
         data-drawer-show="drawer-disable-body-scrolling"
         data-drawer-body-scrolling="false"
-        aria-controls="drawer-disable-body-scrolling"
-        >
-      
+        aria-controls="drawer-disable-body-scrolling">
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -117,7 +116,8 @@ import Modal from "@c/UXUI/Modal.astro";
       <button
         class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 rotate-90 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none"
         type="button"
-        data-modal-target="notificationModal" data-modal-toggle="notificationModal">
+        data-modal-target="notificationModal"
+        data-modal-toggle="notificationModal">
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -138,7 +138,7 @@ import Modal from "@c/UXUI/Modal.astro";
         >
       </button>
     </div>
-
+    <!-- Menu Button -->
     <div class="">
       <button
         class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none"
@@ -164,45 +164,48 @@ import Modal from "@c/UXUI/Modal.astro";
         >
       </button>
     </div>
-
+    <!-- [R] Button -->
     <div class="">
-      <button
-        class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none"
-        type="button"
-        data-drawer-target="drawer-disable-body-scrolling"
-        data-drawer-show="drawer-disable-body-scrolling"
-        data-drawer-body-scrolling="false"
-        aria-controls="drawer-disable-body-scrolling">
-        <svg
-          viewBox="0 0 48 48"
-          id="Layer_2"
-          data-name="Layer 2"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="#000000"
-          width="32"
-          height="32"
-          ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"
-            ><defs
-              ><style>
-                .cls-1 {
-                  fill: none;
-                  stroke: #000000;
-                  stroke-linecap: round;
-                  stroke-linejoin: round;
-                }
-              </style></defs
-            ><path
-              class="cls-1"
-              d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"
-            ></path><path class="cls-1" d="M15,37.4V10.5h9a9,9,0,0,1,0,18.07H15"
-            ></path><line class="cls-1" x1="24" y1="28.57" x2="32.91" y2="37.5"
-            ></line></g
-          ></svg
-        >
-      </button>
+      <a href="/">
+        <button
+          class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 mr-2 focus:outline-none"
+          type="button">
+          <svg
+            viewBox="0 0 48 48"
+            id="Layer_2"
+            data-name="Layer 2"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
+            width="32"
+            height="32"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"
+              ><defs
+                ><style>
+                  .cls-1 {
+                    fill: none;
+                    stroke: #000000;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                  }
+                </style></defs
+              ><path
+                class="cls-1"
+                d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"
+              ></path><path
+                class="cls-1"
+                d="M15,37.4V10.5h9a9,9,0,0,1,0,18.07H15"></path><line
+                class="cls-1"
+                x1="24"
+                y1="28.57"
+                x2="32.91"
+                y2="37.5"></line></g
+            ></svg
+          >
+        </button>
+      </a>
     </div>
   </div>
 </nav>
@@ -242,7 +245,7 @@ import Modal from "@c/UXUI/Modal.astro";
     <ul class="space-y-2 font-medium">
       <li>
         <a
-          href="#"
+          href="/"
           class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
           <svg
             class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -257,7 +260,7 @@ import Modal from "@c/UXUI/Modal.astro";
               d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"
             ></path>
           </svg>
-          <span class="ml-3">Dashboard</span>
+          <span class="ml-3">Portal</span>
         </a>
       </li>
       <li>
@@ -360,7 +363,7 @@ import Modal from "@c/UXUI/Modal.astro";
       </li>
       <li>
         <a
-          href="#"
+          href="/account/"
           class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
           <svg
             class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -377,7 +380,7 @@ import Modal from "@c/UXUI/Modal.astro";
       </li>
       <li>
         <a
-          href="#"
+          href="/shop/"
           class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
           <svg
             class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -394,7 +397,7 @@ import Modal from "@c/UXUI/Modal.astro";
       </li>
       <li>
         <a
-          href="#"
+          href="/account/login/"
           class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
           <svg
             class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -415,7 +418,7 @@ import Modal from "@c/UXUI/Modal.astro";
       </li>
       <li>
         <a
-          href="#"
+          href="/account/register/"
           class="flex items-center p-2 text-cyan-200 rounded-lg hover:bg-cyan-700 hover:text-white group">
           <svg
             class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -438,17 +441,44 @@ import Modal from "@c/UXUI/Modal.astro";
       </li>
     </ul>
   </div>
+  <div>
+    <slot>
+      Hi
+    </slot>
+  </div>
 </div>
 
 <!-- Earth Modal -> Flowbite -->
 
 <Modal ref_id="earthModal" title="Earth" description="Donde da Earth?">
-   <button data-modal-hide="earthModal" type="button" class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">I accept</button>
-   <button data-modal-hide="earthModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Decline</button>
+  <button
+    data-modal-hide="earthModal"
+    type="button"
+    class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+    >I accept</button
+  >
+  <button
+    data-modal-hide="earthModal"
+    type="button"
+    class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10"
+    >Decline</button
+  >
 </Modal>
 
-
-<Modal ref_id="notificationModal" title="Notifications" description="No Notifications">
-   <button data-modal-hide="notificationModal" type="button" class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">I accept</button>
-   <button data-modal-hide="notificationModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Decline</button>
+<Modal
+  ref_id="notificationModal"
+  title="Notifications"
+  description="No Notifications">
+  <button
+    data-modal-hide="notificationModal"
+    type="button"
+    class="text-black bg-cyan-200 hover:bg-cyan-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+    >I accept</button
+  >
+  <button
+    data-modal-hide="notificationModal"
+    type="button"
+    class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10"
+    >Decline</button
+  >
 </Modal>

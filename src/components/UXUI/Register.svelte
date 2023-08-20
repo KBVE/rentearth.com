@@ -193,15 +193,12 @@
 </svelte:head>
 
 <WidgetWrapper
-	background="https://images.unsplash.com/photo-1597851065532-055f97d12e47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80">
+	background="https://images.unsplash.com/photo-1527672809634-04ed36500acd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80">
 	<section class="">
 		<div
 			class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
 			<a href="/#" class="flex items-center mb-6">
-				<img
-					class="w-32 mr-2"
-					src="https://kbve.com/assets/img/letter_logo.svg"
-					alt="logo" />
+				Rent
 			</a>
 			<div
 				class="w-full bg-transparent rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
