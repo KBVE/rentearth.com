@@ -75,7 +75,8 @@
             }
             */
            //console.log(res.response);
-           notification(`Final Loaded ${res.response}`);
+           //notification(`Final Loaded ${res.response}`);
+           notification('Image Loaded');
            finalLogo = res.response;
         }
 
