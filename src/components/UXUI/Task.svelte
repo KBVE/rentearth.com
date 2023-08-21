@@ -62,7 +62,7 @@
       const res = await appwriteFunctions.createExecution(task, virtualEngine);
       
       if (res.status === 'failed') {
-        throw new Error('Internal Error. Try again later.');
+        throw new Error('Try again');
       }
 
       if (res.response) {

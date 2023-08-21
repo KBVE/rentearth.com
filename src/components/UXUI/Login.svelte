@@ -130,7 +130,7 @@
 	let captchaToken = '';
 
 	const dismiss = async () => {
-		notification('');
+		//notification('');
 	};
 
 	const handleProfile = async () => {
@@ -157,7 +157,15 @@
 		} catch (error) {
 			if (error instanceof Error) {
 				log(error.message);
-				notification(error.message);
+				Toastify({
+					gravity: "bottom", // `top` or `bottom`
+					position: "right", // `left`, `center` or `right`
+					text: error.message,
+
+					duration: 5000
+
+					}).showToast();
+				//notification(error.message);
 				reset();
 			}
 		} finally {

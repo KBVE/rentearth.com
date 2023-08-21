@@ -8,8 +8,7 @@ const dismiss = async () => {
 </script>
 
 <div class="relative">
-    <div class="absolute bottom-0 right-0">
-
+    <div class="absolute top-0 right-0">
     <div
       id="toast-default"
       class="flex float-right items-center w-full max-w-xs p-4 bg-offset rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"

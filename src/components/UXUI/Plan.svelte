@@ -59,14 +59,12 @@
       console.log(virtualEngine);
       const res = await appwriteFunctions.createExecution(appWriteFunction, virtualEngine);
 
-      notification("Loading.");
-
       if (res.status === "failed") {
-        throw new Error("Internal Error. Try again later.");
+        throw new Error("Try again");
       }
 
       if (res.response) {
-        notification("Image Loaded");
+        notification("Business Plan Loaded");
         businessPlan = JSON.parse(res.response);
         if(businessPlan){
           locker("businessPlan", JSON.stringify(businessPlan));
@@ -120,7 +118,10 @@
   <selection>
     <div class="p-6 sm:p-12">
       <h1 class="text-xl font-semibold text-white-1200 dark:text-white">
-        Step 4: Create custom businessPlan for your business
+        Step 2: Create a Business Plan.
+      </h1>
+      <h1 class="text-xl font-semibold text-white-1200 dark:text-white">
+        This can take a while, please proceed to create logos, graphical business content, and your website!
       </h1>
       <div class="p-4"
       >
@@ -150,7 +151,7 @@
             type="submit"
             class="w-full bg-secondary hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             disabled={loading}
-            ><span>{loading ? "Loading" : "Generate Business BusinessPlan"}</span></button
+            ><span>{loading ? "Loading" : "Generate Business Plan"}</span></button
           >
         </form>
         
@@ -174,3 +175,5 @@
     
   </selection>
 </WidgetWrapper>
+
+<Logo />

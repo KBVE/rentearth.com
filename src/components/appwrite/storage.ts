@@ -32,9 +32,14 @@ export const log = async (log: string) => {
 };
 
 export const notification = async (error: string) => {
-	task(async () => {
-		notification$.set(error);
-	});
+	Toastify({
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        text: error,
+
+        duration: 5000
+
+        }).showToast();
 };
 
 export const tasker = async (__key: WritableAtom, __data) => {

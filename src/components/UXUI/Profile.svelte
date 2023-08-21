@@ -48,7 +48,7 @@
 	  {#if $kbve$.username && $kbve$.username !== undefined && $kbve$.username !== 'undefined' && $kbve$.username.length > 0}
 	  <div class="flex flex-col space-y-2 md:space-x-3 md:flex-row">
         <img
-          src="https://source.unsplash.com/32x32/?portrait"
+          src={`https://ui-avatars.com/api/?name=${$kbve$.username}&size=32`}
           alt="No Avatar"
           class="self-center flex-shrink-0 border rounded-full md:justify-self-start bg-gray-500 border-gray-700"
         />

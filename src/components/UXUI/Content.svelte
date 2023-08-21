@@ -60,14 +60,12 @@
       console.log(virtualEngine);
       const res = await appwriteFunctions.createExecution(appWriteFunction, virtualEngine);
 
-      notification("Loading.");
-
       if (res.status === "failed") {
-        throw new Error("Internal Error. Try again later.");
+        throw new Error("Try again");
       }
 
       if (res.response) {
-        notification("Image Loaded");
+        notification("Content Loaded");
         content = JSON.parse(res.response);
         if(content){
           locker("content", JSON.stringify(content));
@@ -124,7 +122,7 @@
   <selection>
     <div class="p-6 sm:p-12">
       <h1 class="text-2xl font-semibold text-white-900 dark:text-white">
-        Step 3: Create custom content
+        Step 4: Create custom content
       </h1>
       <h1 class="text-xl font-semibold text-white-1200 dark:text-white">
         The more images you generate here, the better the website will look.

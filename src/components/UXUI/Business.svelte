@@ -17,6 +17,7 @@
   import { type BusinessResponse } from "@c/kbve";
   import { Query } from "appwrite";
   import Content from "./Content.svelte";
+  import Plan from "./Plan.svelte";
 
   let loading = false;
   let renderIMG = false;
@@ -69,7 +70,7 @@
       notification("Loading...");
 
       if (res.status === "failed") {
-        throw new Error("Internal Error. Try again later.");
+        throw new Error("Try again");
       }
 
       if (res.response) {
@@ -108,6 +109,9 @@
   };
 
   onMount(() => {
+    if(!$kbve$.email || $kbve$.email === ''){
+        window.location.replace("/account/login")
+    }
     GetBusinesses();
     mounted = true;
   });
@@ -188,7 +192,7 @@
                     <td>{business.business_name}</td>
                     <td>{business.business_idea}</td>
                     <td>{new Date(business.created_at).toLocaleString()}</td>
-                    <td><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" on:click={() => {locker("business", JSON.stringify(business)); businessFunctionResponse = business; businessSelected = false; businessSelected = true;}}>Select</button></td>
+                    <td><button class="bg-transparent hover:bg-blue-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" on:click={() => {locker("business", JSON.stringify(business)); businessFunctionResponse = business; businessSelected = false; businessSelected = true;}}>Select</button></td>
                 </tr>
             {/each}
         </table>
@@ -196,7 +200,7 @@
 {#if businessFunctionResponse || businessSelected}
 {#key businessFunctionResponse.$id}
     
-    <Logo />
+    <Plan />
     
 {/key}
 {/if}
