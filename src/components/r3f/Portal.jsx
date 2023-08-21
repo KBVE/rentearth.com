@@ -68,7 +68,7 @@ export function Portal() {
 
   return (
     <>
-      <mesh onClick={() => console.log(document.getElementById("#earthModal"))}>
+      <mesh onClick={() => window.location.replace("/account/business")}>
         <primitive object={model.scene} />
         <primitive object={mask.scene} />
         <FillQuad map={target.texture} maskId={1} />

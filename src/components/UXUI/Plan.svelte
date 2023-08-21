@@ -16,7 +16,6 @@
   import { AppSettings } from "src/constants";
   import { type LogoResponse, type BusinessResponse } from "@c/kbve";
   import { Query } from "appwrite";
-  import Website from "./Website.svelte";
 
   let loading = false;
   let renderIMG = false;
@@ -24,12 +23,12 @@
   let appWriteFunctionLoaded = false;
   let skeleton: any;
 
-  let appWriteFunction = AppSettings.CREATE_BUSINESS_CONTENT_APPWRITE_FUNCTION;
+  let appWriteFunction = AppSettings.CREATE_BUSINESS_PLAN_APPWRITE_FUNCTION;
   let virtualEngine: any;
   let business: BusinessResponse;
-  let content: LogoResponse;
-  let contentResponse: LogoResponse;
-  let pastContent: LogoResponse[] = [];
+  let businessPlan: LogoResponse;
+  let businessPlanResponse: LogoResponse;
+  let pastBusinessPlans: LogoResponse[] = [];
   let businessSelected = false;
 
   const dispatch = createEventDispatcher();
@@ -56,7 +55,7 @@
     try {
       loading = true;
       renderIMG = true;
-      virtualEngine = JSON.stringify({ businessName: business.business_name, businessId: business.$id });
+      virtualEngine = JSON.stringify({ businessName: business.business_name, businessId: business.$id, businessIdea: business.business_idea });
       console.log(virtualEngine);
       const res = await appwriteFunctions.createExecution(appWriteFunction, virtualEngine);
 
@@ -65,12 +64,12 @@
       }
 
       if (res.response) {
-        notification("Content Loaded");
-        content = JSON.parse(res.response);
-        if(content){
-          locker("content", JSON.stringify(content));
+        notification("Business Plan Loaded");
+        businessPlan = JSON.parse(res.response);
+        if(businessPlan){
+          locker("businessPlan", JSON.stringify(businessPlan));
         }
-        GetContent();
+        GetBusinessPlans();
       }
     } catch (error) {
       if (error instanceof Error) {
@@ -82,15 +81,12 @@
     }
   };
 
-  const GetContent = async () => {
+  const GetBusinessPlans = async () => {
     try {
-      const dbResponse = await __get(AppSettings.DATABASE, AppSettings.IMAGE_CONTENT, [Query.equal('business_id', business.$id), Query.orderDesc("created_at")])
+      const dbResponse = await __get(AppSettings.DATABASE, AppSettings.BUSINESS_PLAN, [Query.equal('business_id', business.$id), Query.orderDesc("created_at")])
 
       const dbResponseJson = JSON.parse(dbResponse);
-      pastContent = dbResponseJson.documents;
-      locker("images", JSON.stringify(pastContent.map((item: any) => item.url)));
-      content = pastContent[0];
-      locker("content", JSON.stringify(content));
+      pastBusinessPlans = dbResponseJson.documents;
     
     } catch {
       
@@ -103,7 +99,7 @@
 
   onMount(() => {
     business = JSON.parse($kbve$.business);
-    GetContent();
+    GetBusinessPlans();
     mounted = true;
   });
 
@@ -121,11 +117,11 @@
 <WidgetWrapper background="https://kbve.com/assets/img/curved-images/wave.jpg">
   <selection>
     <div class="p-6 sm:p-12">
-      <h1 class="text-2xl font-semibold text-white-900 dark:text-white">
-        Step 4: Create custom content
+      <h1 class="text-xl font-semibold text-white-1200 dark:text-white">
+        Step 2: Create a Business Plan.
       </h1>
       <h1 class="text-xl font-semibold text-white-1200 dark:text-white">
-        The more images you generate here, the better the website will look.
+        This can take a while, please proceed to create logos, graphical business content, and your website!
       </h1>
       <div class="p-4"
       >
@@ -155,23 +151,23 @@
             type="submit"
             class="w-full bg-secondary hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             disabled={loading}
-            ><span>{loading ? "Loading" : "Generate Business Image Content"}</span></button
+            ><span>{loading ? "Loading" : "Generate Business Plan"}</span></button
           >
         </form>
         
       </div>
       <div>
         <h2>Generated:</h2>
-        <div class="grid grid-cols-6 gap-2">
+        <div class="grid grid-cols-2 gap-2">
   
-        {#each pastContent as content}
-          {#if content.url}
-            <img
-                src={content.url}
-                alt=""
-                width="300"
-              />
-          {/if}
+        {#each pastBusinessPlans as businessPlan}
+        <iframe
+          style="background: #FFFFFF;"
+          title={businessPlan.$id}
+          src={businessPlan.url}
+          width="800"
+          height="800"
+        />
         {/each}
       </div>
       </div>
@@ -180,6 +176,4 @@
   </selection>
 </WidgetWrapper>
 
-{#if $kbve$.content && business && content && business.$id == content.business_id}
-    <Website />
-{/if}
+<Logo />

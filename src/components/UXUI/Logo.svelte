@@ -55,14 +55,12 @@
       console.log(virtualEngine);
       const res = await appwriteFunctions.createExecution(task, virtualEngine);
 
-      notification("Loading.");
-
       if (res.status === "failed") {
-        throw new Error("Internal Error. Try again later.");
+        throw new Error("Try again");
       }
 
       if (res.response) {
-        notification("Image Loaded");
+        notification("Logo Loaded");
         logo = JSON.parse(res.response);
         if(logo){
           locker("logo", JSON.stringify(logo));
@@ -120,7 +118,7 @@
 <WidgetWrapper background="https://kbve.com/assets/img/curved-images/wave.jpg">
   <selection>
     <div class="p-6 sm:p-12">
-      <h1 class="text-2xl font-semibold text-white-900 dark:text-white">Step 2: Create your logo</h1>
+      <h1 class="text-2xl font-semibold text-white-900 dark:text-white">Step 3: Create your logo</h1>
       <div class="p-4"
       >
         <!--<div class="min-h-[100px] min-w-[200px]">

@@ -11,29 +11,29 @@ export function Words() {
 
   return (
     <>
-      <Float position={[3.75, 5.65, 0.75]} rotation={[0, -0.2, -0.05]} rotationIntensity={0.35} floatIntensity={0.5}>
+      <Float position={[3.75, 7.5, 0.75]} rotation={[0, -0.2, -0.05]} rotationIntensity={0.35} floatIntensity={0.5}>
         <Text3D
           font={"/r3f/fonts/Roboto_Regular.json"}
-          size={0.275}
+          size={0.35}
           height={0.065}
           curveSegments={12}
         >
-          Rent Earth
+           Let ATLAS carry your vision into the next big venture.
           <meshStandardMaterial color={ 0x00FFFF }  />
         </Text3D>
       </Float>
 
-      <Float position={[3.5, 6, 0]} rotation={[0, -0.35, -0.05]} rotationIntensity={0.35} floatIntensity={0.5}>
+      <Float position={[3.5, 8, 0]} rotation={[0, -0.35, -0.05]} rotationIntensity={0.35} floatIntensity={0.5}>
         <Text3D
           font={"/r3f/fonts/Roboto_Regular.json"}
           size={0.575}
           height={0.065}
           curveSegments={12}
         >
-          Enter the Atlas
+          Click the Portal
           <meshStandardMaterial color={[1, 0.15, 0.1]} emissive={[1, 0.1, 0]} />
         </Text3D>
-      </Float>
+      </Float>S
 
 
       <Float position={[-2, 6, 5]} rotation={[0, -0.35, -0.05]} rotationIntensity={0.35} floatIntensity={0.5}>
@@ -43,7 +43,7 @@ export function Words() {
           height={0.065}
           curveSegments={12}
         >
-          {$username.username || 'Guest'}
+          Project: ATLAS
           <meshStandardMaterial color={  0x00FFFF } emissive={[0.1, 0.1, 0]} />
         </Text3D>
       </Float>

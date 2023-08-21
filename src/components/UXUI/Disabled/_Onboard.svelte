@@ -92,7 +92,7 @@
       );
       if (res.status === "failed") {
         notification(`${res.response}`);
-        throw new Error("Internal Error. Try again later.");
+        throw new Error("Try again");
       }
       if (res.statusCode === 400)
       {
