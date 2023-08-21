@@ -17,6 +17,7 @@ export type kbveLocker = {
 	content: string,
 	images: string
 	website: string,
+	businessPlan: string,
 	theme: "dark" | "light" | "auto",
 };
 export const kbve_v01d: number = 0.99;
