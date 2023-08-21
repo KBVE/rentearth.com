@@ -147,6 +147,24 @@ export const account = async () => {
 	}
 };
 
+
+export const __get = async ( database: string, collection: string, filter: string[]) => {
+	try {
+	ClientStorage.log(` Starting AppWrite -> _get -> ${database}`);
+	let __getty = await appwriteDatabases.listDocuments(
+			database,
+			collection,
+			filter
+		);
+		ClientStorage.log(JSON.stringify(__getty));
+		return JSON.stringify(__getty);
+	} catch (error) {
+		const appwriteError = error as AppwriteException;
+		throw appwriteError;
+	}
+}
+
+
 export const getProfile = async () => {
 	try {
 	ClientStorage.log(" Starting AppWrite -> Session -> ProfileData");

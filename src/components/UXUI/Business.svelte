@@ -12,9 +12,11 @@
   import Notification from "./Notification.svelte";
   import Logo from "./Logo.svelte";
   import { kbve$, log, notification$, notification, locker } from "@c/appwrite/storage";
-  import { appwriteAccount, appwriteFunctions } from "@c/appwrite/appwrite";
+  import { __get, appwriteAccount, appwriteFunctions } from "@c/appwrite/appwrite";
   import { AppSettings } from "src/constants";
   import { type BusinessResponse } from "@c/kbve";
+  import { Query } from "appwrite";
+  import Content from "./Content.svelte";
 
   let loading = false;
   let renderIMG = false;
@@ -27,6 +29,8 @@
   let businessIdea = "";
   let virtualEngine: any;
   let businessFunctionResponse: BusinessResponse;
+  let pastBusinesses: BusinessResponse[] = [];
+  let businessSelected = false;
 
   const dispatch = createEventDispatcher();
 
@@ -87,11 +91,23 @@
     }
   };
 
+  const GetBusinesses = async () => {
+    try {
+      const dbResponse = await __get(AppSettings.DATABASE, AppSettings.BUSINESS, [Query.equal('created_by', $kbve$.email), Query.orderDesc("created_at")])
+
+      const dbResponseJson = JSON.parse(dbResponse);      pastBusinesses = dbResponseJson.documents;
+    
+    } catch {
+      
+    }
+  }
+
   const dismiss = async () => {
     notification("");
   };
 
   onMount(() => {
+    GetBusinesses();
     mounted = true;
   });
 
@@ -113,9 +129,7 @@
         Step 1: Define your business
       </h1>
 
-      <div
-        class="flex flex-col space-y-4 md:space-y-0 items-center justify-center md:space-x-6 md:flex-row"
-      >
+      <div>
         <form
           class="space-y-4 md:space-y-6"
           action="#"
@@ -157,9 +171,28 @@
         </form>
       </div>
     </div>
+    <h2>Previously Generated:</h2>
+        <div class="grid grid-cols-6 gap-2">
+        <table>
+            <tr>
+                <th>Business Name</th>
+                <th>Business Idea</th>
+                <th>Business ID</th>
+                <th>Created At</th>
+                <th>Select</th>
+            </tr>
+            {#each pastBusinesses as business}
+                <tr>
+                    <td>{business.business_name}</td>
+                    <td>{business.business_idea}</td>
+                    <td>{business.$id}</td>
+                    <td>{new Date(business.created_at).toLocaleString()}</td>
+                    <td><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" on:click={() => {locker("business", JSON.stringify(business)); businessSelected = true;}}>Select</button></td>
+                </tr>
+            {/each}
   </selection>
 </WidgetWrapper>
-{#if businessFunctionResponse}
+{#if businessFunctionResponse || businessSelected}
   <Logo />
 {/if}
 

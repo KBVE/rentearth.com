@@ -1,0 +1,13 @@
+---
+import KBVE from "@l/KBVE.astro";
+import SvelteGallery from "@c/UXUI/Gallery.svelte";
+import SvelteProfileCard from "@c/UXUI/ProfileWidget.svelte";
+---
+<KBVE>
+    <br />
+    <br />
+    <br />
+    <SvelteProfileCard client:only="svelte" />
+    <br />
+    <SvelteGallery client:only="svelte" />
+</KBVE>

@@ -8,9 +8,12 @@
   import { onMount, onDestroy, createEventDispatcher } from "svelte";
   import WidgetWrapper from "./WidgetWrapper.svelte";
 
-  import { kbve$, log, notification$, notification } from "@c/appwrite/storage";
-  import { appwriteAccount, appwriteFunctions } from "@c/appwrite/appwrite";
-  import { type BusinessResponse } from "@c/kbve";
+  import { Query } from 'appwrite';
+  import { kbve$, log, notification$, notification, locker } from "@c/appwrite/storage";
+  import { __get, appwriteAccount, appwriteFunctions } from "@c/appwrite/appwrite";
+  import { type BusinessResponse, type LogoResponse } from "@c/kbve";
+  import { AppSettings } from "src/constants";
+  import Content from "./Content.svelte";
 
   let loading = false;
   let renderIMG = false;
@@ -20,7 +23,8 @@
 
   let task = "64dfee82eada6467290f";
   let virtualEngine: any;
-  let finalLogo = "";
+  let logo: LogoResponse;
+  let pastLogos: LogoResponse[] = [];
   let business: BusinessResponse;
 
   const dispatch = createEventDispatcher();
@@ -28,7 +32,7 @@
   const TaskData = async (url: string) => {};
   const ValidTask = () => {
     if (business.business_name.length < 1) {
-      notification("Data needs to be longer!");
+      notification("Business name needs to be longer!");
       return false;
     } else if (task.length < 4) {
       notification("Task needs to be longer!");
@@ -58,20 +62,12 @@
       }
 
       if (res.response) {
-        /*
-            const json = JSON.parse(res.response);
-            if (json.success === false) {
-                throw new Error(json.msg);
-            }
-            else 
-            {
-              notification(JSON.stringify(json));
-            }
-            */
-        //console.log(res.response);
-        //notification(`Final Loaded ${res.response}`);
         notification("Image Loaded");
-        finalLogo = res.response;
+        logo = JSON.parse(res.response);
+        if(logo){
+          locker("logo", JSON.stringify(logo));
+        }
+        GetBusinessLogos();
       }
     } catch (error) {
       if (error instanceof Error) {
@@ -83,13 +79,29 @@
     }
   };
 
+  //Query.limit(1)
+
+
+  const GetBusinessLogos = async () => {
+    try {
+      const dbResponse = await __get(AppSettings.DATABASE, AppSettings.LOGO, [Query.equal('business_id', business.$id), Query.orderDesc('created_at')])
+
+      const dbResponseJson = JSON.parse(dbResponse);
+      pastLogos = dbResponseJson.documents;
+    
+    } catch {
+      
+    }
+  }
+
   const dismiss = async () => {
     notification("");
   };
 
   onMount(() => {
     business = JSON.parse($kbve$.business);
-    console.log(business);
+    GetBusinessLogos();
+
     mounted = true;
   });
 
@@ -197,30 +209,21 @@
             ><span>{loading ? "Loading" : "Create Logo"}</span></button
           >
         </form>
-        {#if renderIMG}
-        {#if finalLogo}
-          <img
-            src={finalLogo}
-            alt=""
-            width="500"
-          />
-        {:else}
-          <img
-            src="/img/loading-icegif.gif"
-            alt=""
-            width="500"
-          />
-        {/if}
-        {/if}
+       
       </div>
 
       <div>
-        <h2>Previously Generated:</h2>
+        <h2>Generated:</h2>
+        <div class="grid grid-cols-6 gap-2">
+
+        {#each pastLogos as logo}
             <img
-                src="https://storageapi.webenclave.com/hackathon/1692429874431.png"
+                src={logo.url}
                 alt=""
                 width="300"
               />
+        {/each}
+      </div>
       </div>
       
       <!-- {#if renderIMG}
@@ -342,3 +345,7 @@
     </div>
   </selection>
 </WidgetWrapper>
+
+{#if $kbve$.logo}
+    <Content />
+{/if}
