@@ -8,6 +8,7 @@ import {
 	Storage,
 	ID,
 	Models,
+	Query,
 } from "appwrite";
 import { atom, WritableAtom, task } from "nanostores";
 
@@ -131,10 +132,9 @@ export const create = async (
 		await appwriteAccount.create(ID.unique(), email, password, name);
 		const session = await appwriteAccount.createEmailSession(email, password);
 		isLoggedIn.set(session);
-		window.location.href = "/account/profile";
 	} catch (error) {
 		const appwriteError = error as AppwriteException;
-		throw appwriteError.message;
+		throw appwriteError;
 	}
 };
 
@@ -143,9 +143,43 @@ export const account = async () => {
 		return appwriteAccount.get();
 	} catch (error) {
 		const appwriteError = error as AppwriteException;
-		throw appwriteError.message;
+		throw appwriteError;
 	}
 };
+
+
+export const __get = async ( database: string, collection: string, filter: string[]) => {
+	try {
+	ClientStorage.log(` Starting AppWrite -> _get -> ${database}`);
+	let __getty = await appwriteDatabases.listDocuments(
+			database,
+			collection,
+			filter
+		);
+		ClientStorage.log(JSON.stringify(__getty));
+		return JSON.stringify(__getty);
+	} catch (error) {
+		const appwriteError = error as AppwriteException;
+		throw appwriteError;
+	}
+}
+
+
+export const getProfile = async () => {
+	try {
+	ClientStorage.log(" Starting AppWrite -> Session -> ProfileData");
+	let __ProfileData = await appwriteDatabases.listDocuments(
+			"user",
+			"profile",
+			[Query.limit(1)]
+		);
+		ClientStorage.log(JSON.stringify(__ProfileData));
+		return JSON.stringify(__ProfileData);
+	} catch (error) {
+		const appwriteError = error as AppwriteException;
+		throw appwriteError;
+	}
+}
 
 export const getUser = async () => {
 	

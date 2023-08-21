@@ -11,15 +11,14 @@
 
 	const handleLogout = async () => {
 		try {
-			await logout();
-			ClientStorage.locker('email', String(undefined));
-			ClientStorage.locker('uuid', String(undefined));
-			ClientStorage.locker('last', String(undefined));
-            ClientStorage.locker('emailVerification',  String(undefined));
-            ClientStorage.locker('phoneVerification',  String(undefined));
-            ClientStorage.locker('phone', String(undefined));
-			ClientStorage.locker('username', String(undefined));
-			location.assign('/');
+			const _logout =	await logout();
+			ClientStorage.locker('email', String(''));
+			ClientStorage.locker('uuid', String(''));
+			ClientStorage.locker('last', String(''));
+            ClientStorage.locker('emailVerification',  String(''));
+            ClientStorage.locker('phoneVerification',  String(''));
+            ClientStorage.locker('phone', String(''));
+			ClientStorage.locker('username', String(''));
             notification('User has been logged out!');
 
 			} catch (error) {
@@ -27,6 +26,9 @@
 				log(error.message);
 				notification(error.message);
 			}
+		}
+		finally {
+			location.assign('/');
 		}
 	};
 
