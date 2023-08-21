@@ -122,8 +122,7 @@
       <h1 class="text-xl font-semibold text-white-1200 dark:text-white">
         Step 4: Create custom website for your business
       </h1>
-      <div
-        class="flex flex-col space-y-4 md:space-y-0 items-center justify-center md:space-x-6 md:flex-row"
+      <div class="p-4"
       >
         <form
           class="space-y-4 md:space-y-6"

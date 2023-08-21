@@ -91,6 +91,8 @@
       const dbResponseJson = JSON.parse(dbResponse);
       pastContent = dbResponseJson.documents;
       locker("images", JSON.stringify(pastContent.map((item: any) => item.url)));
+      content = pastContent[0];
+      locker("content", JSON.stringify(content));
     
     } catch {
       
@@ -127,8 +129,7 @@
       <h1 class="text-xl font-semibold text-white-1200 dark:text-white">
         The more images you generate here, the better the website will look.
       </h1>
-      <div
-        class="flex flex-col space-y-4 md:space-y-0 items-center justify-center md:space-x-6 md:flex-row"
+      <div class="p-4"
       >
         <form
           class="space-y-4 md:space-y-6"
@@ -166,11 +167,13 @@
         <div class="grid grid-cols-6 gap-2">
   
         {#each pastContent as content}
+          {#if content.url}
             <img
                 src={content.url}
                 alt=""
                 width="300"
               />
+          {/if}
         {/each}
       </div>
       </div>
@@ -179,6 +182,6 @@
   </selection>
 </WidgetWrapper>
 
-{#if $kbve$.content}
+{#if $kbve$.content && business && content && business.$id == content.business_id}
     <Website />
 {/if}
