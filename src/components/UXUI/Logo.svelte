@@ -88,7 +88,8 @@
 
       const dbResponseJson = JSON.parse(dbResponse);
       pastLogos = dbResponseJson.documents;
-    
+      logo = pastLogos[0];
+      locker("logo", JSON.stringify(logo));
     } catch {
       
     }
@@ -120,8 +121,7 @@
   <selection>
     <div class="p-6 sm:p-12">
       <h1 class="text-2xl font-semibold text-white-900 dark:text-white">Step 2: Create your logo</h1>
-      <div
-        class="flex flex-col space-y-4 md:space-y-0 items-center justify-center md:space-x-6 md:flex-row"
+      <div class="p-4"
       >
         <!--<div class="min-h-[100px] min-w-[200px]">
           {#if $notification$}
@@ -346,6 +346,6 @@
   </selection>
 </WidgetWrapper>
 
-{#if $kbve$.logo}
+{#if $kbve$.logo && business && logo && business.$id == logo.business_id}
     <Content />
 {/if}

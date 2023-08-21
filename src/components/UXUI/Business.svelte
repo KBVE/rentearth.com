@@ -78,7 +78,7 @@
         if(businessFunctionResponse){
             locker("business", JSON.stringify(businessFunctionResponse));
         }
-        
+        GetBusinesses();
         
       }
     } catch (error) {
@@ -95,7 +95,8 @@
     try {
       const dbResponse = await __get(AppSettings.DATABASE, AppSettings.BUSINESS, [Query.equal('created_by', $kbve$.email), Query.orderDesc("created_at")])
 
-      const dbResponseJson = JSON.parse(dbResponse);      pastBusinesses = dbResponseJson.documents;
+      const dbResponseJson = JSON.parse(dbResponse);      
+      pastBusinesses = dbResponseJson.documents.slice(0,5);
     
     } catch {
       
@@ -171,13 +172,14 @@
         </form>
       </div>
     </div>
-    <h2>Previously Generated:</h2>
-        <div class="grid grid-cols-6 gap-2">
-        <table>
+    
+  </selection>
+  <h2>Generated:</h2>
+
+        <table class="w-full text-sm text-left text-white-500 dark:text-gray-400">
             <tr>
                 <th>Business Name</th>
                 <th>Business Idea</th>
-                <th>Business ID</th>
                 <th>Created At</th>
                 <th>Select</th>
             </tr>
@@ -185,15 +187,18 @@
                 <tr>
                     <td>{business.business_name}</td>
                     <td>{business.business_idea}</td>
-                    <td>{business.$id}</td>
                     <td>{new Date(business.created_at).toLocaleString()}</td>
-                    <td><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" on:click={() => {locker("business", JSON.stringify(business)); businessSelected = true;}}>Select</button></td>
+                    <td><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" on:click={() => {locker("business", JSON.stringify(business)); businessFunctionResponse = business; businessSelected = false; businessSelected = true;}}>Select</button></td>
                 </tr>
             {/each}
-  </selection>
+        </table>
 </WidgetWrapper>
 {#if businessFunctionResponse || businessSelected}
-  <Logo />
+{#key businessFunctionResponse.$id}
+    
+    <Logo />
+    
+{/key}
 {/if}
 
 {#if $notification$}
